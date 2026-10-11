@@ -3,3 +3,4 @@ data/
 explore/out/
 predictions/
 __pycache__/
+slurm-*.out
