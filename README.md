@@ -39,7 +39,8 @@ sbatch models/control_resample/predict.sbatch                 # log: slurm-contr
 ./package.sh predictions/control_resample/prediction.h5ad --dry-run   # check only
 
 # 3. Submit (login node, by hand: submissions per day are limited)
-vcc submit predictions/control_resample/prediction.vcc
+vcc submit predictions/control_resample/prediction.vcc -m control_resample -d "what changed" --wait
+vcc submit predictions/control_resample/prediction.vcc -m control_resample --resume   # if the upload was interrupted
 ```
 
 `vcc prep` loads the whole prediction into memory: about 20–35 GB of RAM for a full one. If the login node
